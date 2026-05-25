@@ -1,0 +1,273 @@
+.root {
+    -fx-background-color: #0a1628;
+    -fx-font-family: "Segoe UI";
+}
+
+.titulo-juego {
+    -fx-font-size: 52px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00d4ff;
+    -fx-effect: dropshadow(gaussian, #00b4d8, 28, 0.55, 0, 0);
+}
+
+.subtitulo {
+    -fx-font-size: 15px;
+    -fx-text-fill: #7ecfef;
+}
+
+.panel-menu {
+    -fx-background-color: #0d2137;
+    -fx-background-radius: 14;
+    -fx-border-color: #1a4a6b;
+    -fx-border-radius: 14;
+    -fx-border-width: 1.5;
+    -fx-padding: 28 32 28 32;
+    -fx-effect: dropshadow(gaussian, rgba(0,180,216,0.18), 24, 0, 0, 0);
+}
+
+.campo-nombre {
+    -fx-background-color: #122944;
+    -fx-text-fill: #ecf0f1;
+    -fx-prompt-text-fill: #4a7a8e;
+    -fx-background-radius: 8;
+    -fx-border-color: #1a4a6b;
+    -fx-border-radius: 8;
+    -fx-font-size: 15px;
+    -fx-padding: 10 14;
+    -fx-pref-width: 280;
+}
+
+.campo-nombre:focused {
+    -fx-border-color: #00b4d8;
+    -fx-effect: dropshadow(gaussian, rgba(0,180,216,0.4), 10, 0, 0, 0);
+}
+
+.btn-jugar {
+    -fx-background-color: linear-gradient(to bottom, #0096c7, #0077b6);
+    -fx-text-fill: white;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-padding: 12 36;
+    -fx-effect: dropshadow(gaussian, rgba(0,150,199,0.45), 14, 0, 0, 3);
+}
+
+.btn-jugar:hover {
+    -fx-background-color: linear-gradient(to bottom, #00b4d8, #0096c7);
+    -fx-effect: dropshadow(gaussian, rgba(0,180,216,0.75), 20, 0, 0, 3);
+}
+
+.btn-jugar:pressed {
+    -fx-background-color: linear-gradient(to bottom, #0077b6, #005f96);
+}
+
+.label-tablero {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00d4ff;
+}
+
+.celda {
+    -fx-min-width: 38;
+    -fx-max-width: 38;
+    -fx-min-height: 38;
+    -fx-max-height: 38;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+}
+
+.celda-agua {
+    -fx-background-color: #163d5c;
+    -fx-border-color: #0d2f46;
+    -fx-text-fill: transparent;
+}
+
+.celda-agua:hover {
+    -fx-background-color: #1e5a80;
+    -fx-border-color: #00b4d8;
+    -fx-effect: dropshadow(gaussian, rgba(0,180,216,0.4), 6, 0, 0, 0);
+}
+
+.celda-barco {
+    -fx-background-color: #2d6a4f;
+    -fx-border-color: #1a4a35;
+    -fx-text-fill: transparent;
+}
+
+.celda-impacto {
+    -fx-background-color: #e63946;
+    -fx-border-color: #c1121f;
+    -fx-text-fill: white;
+    -fx-cursor: default;
+}
+
+.celda-fallo {
+    -fx-background-color: #253b4a;
+    -fx-border-color: #1a2e3a;
+    -fx-text-fill: #4a7a8e;
+    -fx-cursor: default;
+}
+
+.celda-preview {
+    -fx-background-color: rgba(46,213,115,0.45);
+    -fx-border-color: #2ed573;
+    -fx-border-width: 1.5;
+}
+
+.celda-preview-invalida {
+    -fx-background-color: rgba(230,57,70,0.38);
+    -fx-border-color: #e63946;
+    -fx-border-width: 1.5;
+}
+
+.header-celda {
+    -fx-font-size: 11px;
+    -fx-text-fill: #5a8aaa;
+    -fx-alignment: center;
+    -fx-min-width: 40;
+    -fx-max-width: 40;
+    -fx-min-height: 18;
+}
+
+.panel-lateral {
+    -fx-background-color: #0d2137;
+    -fx-background-radius: 12;
+    -fx-border-color: #1a4a6b;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 14 14 14 14;
+}
+
+.label-seccion {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00b4d8;
+}
+
+.label-info {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7ecfef;
+}
+
+.btn-orientacion {
+    -fx-background-color: #122944;
+    -fx-text-fill: #00d4ff;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-color: #1a4a6b;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 8 16;
+    -fx-pref-width: 170;
+}
+
+.btn-orientacion:hover {
+    -fx-background-color: #1a4a6b;
+    -fx-border-color: #00b4d8;
+}
+
+.btn-orientacion:selected {
+    -fx-background-color: #0096c7;
+    -fx-text-fill: white;
+    -fx-border-color: #00d4ff;
+}
+
+.label-score {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00d4ff;
+}
+
+.tabla-tops {
+    -fx-background-color: #0d2137;
+    -fx-control-inner-background: #0d2137;
+    -fx-border-color: #1a4a6b;
+    -fx-border-radius: 8;
+}
+
+.tabla-tops .column-header-background {
+    -fx-background-color: #0a2233;
+    -fx-background-radius: 6 6 0 0;
+}
+
+.tabla-tops .column-header .label {
+    -fx-text-fill: #00b4d8;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-alignment: center;
+}
+
+.tabla-tops .table-row-cell {
+    -fx-background-color: #0d2137;
+}
+
+.tabla-tops .table-row-cell:odd {
+    -fx-background-color: #0f2840;
+}
+
+.tabla-tops .table-row-cell:selected {
+    -fx-background-color: #1a4a6b;
+}
+
+.tabla-tops .table-cell {
+    -fx-text-fill: #c8e6f5;
+    -fx-font-size: 12px;
+    -fx-alignment: center;
+}
+
+.titulo-victoria {
+    -fx-font-size: 52px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2ed573;
+    -fx-effect: dropshadow(gaussian, #2ed573, 30, 0.55, 0, 0);
+}
+
+.titulo-derrota {
+    -fx-font-size: 52px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e63946;
+    -fx-effect: dropshadow(gaussian, #e63946, 30, 0.55, 0, 0);
+}
+
+.btn-reiniciar {
+    -fx-background-color: linear-gradient(to bottom, #2ed573, #1db954);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-padding: 12 36;
+    -fx-effect: dropshadow(gaussian, rgba(46,213,115,0.45), 14, 0, 0, 3);
+}
+
+.btn-reiniciar:hover {
+    -fx-background-color: linear-gradient(to bottom, #5ef58c, #2ed573);
+    -fx-effect: dropshadow(gaussian, rgba(46,213,115,0.8), 20, 0, 0, 3);
+}
+
+.barco-estado-vivo {
+    -fx-text-fill: #2ed573;
+    -fx-font-size: 12px;
+}
+
+.barco-estado-hundido {
+    -fx-text-fill: #e63946;
+    -fx-font-size: 12px;
+    -fx-strikethrough: true;
+}
+
+.barco-estado-danado {
+    -fx-text-fill: #ffd166;
+    -fx-font-size: 12px;
+}
+
+.separador-panel {
+    -fx-background-color: #1a4a6b;
+    -fx-pref-height: 1;
+}

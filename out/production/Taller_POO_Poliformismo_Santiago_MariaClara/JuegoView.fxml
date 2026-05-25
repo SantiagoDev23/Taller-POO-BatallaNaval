@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="JuegoController"
+            stylesheets="@estilos.css"
+            style="-fx-background-color: #0a1628;">
+
+    <top>
+        <VBox alignment="CENTER" spacing="6"
+              style="-fx-padding: 14 20 8 20; -fx-background-color: #080f1e; -fx-border-color: #0d2137; -fx-border-width: 0 0 1 0;">
+            <HBox alignment="CENTER" spacing="50">
+                <Label fx:id="labelFase" text="FASE: COLOCACIÓN DE BARCOS"
+                       style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #00b4d8;"/>
+                <Label fx:id="labelScore" text="Puntos: 0.0  |  🎯 0  |  💧 0"
+                       styleClass="label-score"/>
+            </HBox>
+            <Label fx:id="labelMensaje" text="Coloca tus barcos haciendo clic en tu tablero"
+                   style="-fx-text-fill: #ecf0f1; -fx-font-size: 13px; -fx-padding: 6 18;
+                          -fx-background-color: #0d2137; -fx-background-radius: 7;
+                          -fx-border-color: #1a4a6b; -fx-border-radius: 7;"
+                   maxWidth="760"/>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox alignment="CENTER" spacing="48"
+              style="-fx-padding: 12 10 10 10;">
+            <VBox alignment="CENTER" spacing="7">
+                <Label text="🛡  Tu Tablero" styleClass="label-tablero"/>
+                <VBox fx:id="contenedorJugador"/>
+            </VBox>
+            <VBox alignment="CENTER" spacing="7">
+                <Label text="🎯  Tablero Enemigo" styleClass="label-tablero"/>
+                <VBox fx:id="contenedorMaquina"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <right>
+        <VBox spacing="12" style="-fx-padding: 12 12 12 6;" prefWidth="195">
+
+            <VBox fx:id="panelColocacion" styleClass="panel-lateral" spacing="10">
+                <Label text="📦  BARCO ACTUAL" styleClass="label-seccion"/>
+                <Label fx:id="labelBarcoActual" text="Portaaviones  ■■■■■"
+                       style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px; -fx-font-weight: bold;"
+                       wrapText="true"/>
+                <Label fx:id="labelTamanoBarco" text="Tamaño: 5 casillas"
+                       styleClass="label-info"/>
+                <Separator style="-fx-background-color: #1a4a6b;"/>
+                <Label text="Orientación:" styleClass="label-info"/>
+                <ToggleButton fx:id="toggleOrientacion"
+                              text="⟷  HORIZONTAL"
+                              styleClass="btn-orientacion"
+                              onAction="#handleToggleOrientacion"/>
+                <Separator style="-fx-background-color: #1a4a6b;"/>
+                <Label text="Clic en TU tablero\npara colocar."
+                       styleClass="label-info" wrapText="true"/>
+                <Label fx:id="labelBarcosRestantes" text=""
+                       style="-fx-text-fill: #5a8aaa; -fx-font-size: 11px;"
+                       wrapText="true"/>
+            </VBox>
+
+            <VBox fx:id="panelBatalla" styleClass="panel-lateral" spacing="8"
+                  visible="false" managed="false">
+                <Label text="⚔  ESTADO DE FLOTA" styleClass="label-seccion"/>
+                <Separator style="-fx-background-color: #1a4a6b;"/>
+                <Label text="Tus barcos:" styleClass="label-info"/>
+                <VBox fx:id="estadoBarcosPropios" spacing="4"/>
+                <Separator style="-fx-background-color: #1a4a6b;"/>
+                <Label text="Barcos enemigos:" styleClass="label-info"/>
+                <VBox fx:id="estadoBarcosEnemigos" spacing="4"/>
+                <Separator style="-fx-background-color: #1a4a6b;"/>
+                <Label text="Clic en el tablero\nenemigo para atacar."
+                       styleClass="label-info" wrapText="true"/>
+            </VBox>
+
+        </VBox>
+    </right>
+
+</BorderPane>
