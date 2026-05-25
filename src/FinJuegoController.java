@@ -30,11 +30,11 @@ public class FinJuegoController {
         if (gano) {
             labelResultado.setText("⚓  ¡VICTORIA!");
             labelResultado.getStyleClass().add("titulo-victoria");
-            labelSubtitulo.setText("Hundiste toda la flota enemiga, " + est.getNombreJugador() + "!");
+            labelSubtitulo.setText("Hundiste todos los barcos enemigos, " + est.getNombreJugador() + "!");
         } else {
             labelResultado.setText("☠  DERROTA");
             labelResultado.getStyleClass().add("titulo-derrota");
-            labelSubtitulo.setText("Tu flota fue hundida, " + est.getNombreJugador() + ". ¡Inténtalo de nuevo!");
+            labelSubtitulo.setText("Tus barcos fueron hundidos, " + est.getNombreJugador() + ". ¡Inténtalo de nuevo!");
         }
 
         labelPuntos.setText(String.format("%.1f", est.getPuntos()));
@@ -43,8 +43,8 @@ public class FinJuegoController {
         labelDisparos.setText(String.valueOf(est.getTotalDisparos()));
 
         contenedorTableros.getChildren().addAll(
-            crearPanelFlota("🛡  Tu Flota", jugador.getTablero().getBarcos()),
-            crearPanelFlota("💀  Flota Enemiga", maquina.getTablero().getBarcos())
+            crearPanelBarcos("🛡  Tus Barcos", jugador.getTablero().getBarcos()),
+            crearPanelBarcos("💀  Barcos Enemigos", maquina.getTablero().getBarcos())
         );
 
         configurarTabla();
@@ -53,7 +53,7 @@ public class FinJuegoController {
         tablaScores.setItems(FXCollections.observableArrayList(lista));
     }
 
-    private VBox crearPanelFlota(String titulo, ArrayList<Barco> barcos) {
+    private VBox crearPanelBarcos(String titulo, ArrayList<Barco> barcos) {
         VBox vbox = new VBox(7);
         vbox.setAlignment(Pos.TOP_LEFT);
         vbox.getStyleClass().add("panel-lateral");

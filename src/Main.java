@@ -80,6 +80,7 @@ public class Main {
             //Punto 1: Turno de la maquina - disparo automatico aleatorio sin repetir coordenadas
             int[] posMaquina = maquina.siguienteDisparo();
             String resultadoMaquina = jugador.getTablero().recibirDisparo(posMaquina[0], posMaquina[1]);
+            maquina.registrarResultado(resultadoMaquina, posMaquina[0], posMaquina[1]);
             String coordMaquina = "" + (char)('A' + posMaquina[0]) + (posMaquina[1] + 1);
             System.out.println("Maquina dispara en " + coordMaquina + " -> " + interpretarResultado(resultadoMaquina));
 

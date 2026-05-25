@@ -148,6 +148,7 @@ public class JuegoController {
 
         int[] posMaquina = maquina.siguienteDisparo();
         String resMaquina = jugador.getTablero().recibirDisparo(posMaquina[0], posMaquina[1]);
+        maquina.registrarResultado(resMaquina, posMaquina[0], posMaquina[1]);
         actualizarCeldaJugador(posMaquina[0], posMaquina[1], resMaquina);
         actualizarEstadoBarcos();
 

@@ -57,7 +57,7 @@
                               styleClass="btn-orientacion"
                               onAction="#handleToggleOrientacion"/>
                 <Separator style="-fx-background-color: #1a4a6b;"/>
-                <Label text="Clic en TU tablero\npara colocar."
+                <Label text="Clic en tu tablero para colocar."
                        styleClass="label-info" wrapText="true"/>
                 <Label fx:id="labelBarcosRestantes" text=""
                        style="-fx-text-fill: #5a8aaa; -fx-font-size: 11px;"
@@ -66,7 +66,7 @@
 
             <VBox fx:id="panelBatalla" styleClass="panel-lateral" spacing="8"
                   visible="false" managed="false">
-                <Label text="⚔  ESTADO DE FLOTA" styleClass="label-seccion"/>
+                <Label text="⚔  ESTADO DE BARCOS" styleClass="label-seccion"/>
                 <Separator style="-fx-background-color: #1a4a6b;"/>
                 <Label text="Tus barcos:" styleClass="label-info"/>
                 <VBox fx:id="estadoBarcosPropios" spacing="4"/>
@@ -74,7 +74,7 @@
                 <Label text="Barcos enemigos:" styleClass="label-info"/>
                 <VBox fx:id="estadoBarcosEnemigos" spacing="4"/>
                 <Separator style="-fx-background-color: #1a4a6b;"/>
-                <Label text="Clic en el tablero\nenemigo para atacar."
+                <Label text="Clic en el tablero enemigo para atacar."
                        styleClass="label-info" wrapText="true"/>
             </VBox>
 
