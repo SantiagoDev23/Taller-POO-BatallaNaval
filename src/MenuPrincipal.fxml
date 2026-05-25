@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="MenuController"
+           stylesheets="@estilos.css"
+           style="-fx-background-color: #0a1628;">
+
+    <VBox alignment="CENTER" spacing="22" maxWidth="560">
+
+        <Label text="⚓  BATALLA NAVAL" styleClass="titulo-juego"/>
+        <Label text="Jugador vs Máquina" styleClass="subtitulo"/>
+
+        <VBox styleClass="panel-menu" alignment="CENTER" spacing="16">
+            <Label text="Nombre de comandante:" styleClass="label-seccion"/>
+            <TextField fx:id="campoNombre"
+                       promptText="Ingresa tu nombre..."
+                       styleClass="campo-nombre"
+                       maxWidth="280"/>
+            <Label fx:id="labelError" text=" " minHeight="16"
+                   style="-fx-text-fill: #e63946; -fx-font-size: 12px;"/>
+            <Button text="⚔  JUGAR"
+                    styleClass="btn-jugar"
+                    onAction="#handleJugar"
+                    defaultButton="true"
+                    prefWidth="190"/>
+        </VBox>
+
+        <VBox styleClass="panel-menu" spacing="10" maxWidth="560">
+            <Label text="🏆  TABLA DE TOPS" styleClass="label-seccion"/>
+            <TableView fx:id="tablaScores"
+                       styleClass="tabla-tops"
+                       prefHeight="190"
+                       maxWidth="530"
+                       editable="false">
+                <placeholder>
+                    <Label text="Sin partidas registradas aún"
+                           style="-fx-text-fill: #4a7a8e; -fx-font-size: 12px;"/>
+                </placeholder>
+                <columns>
+                    <TableColumn fx:id="colPos"      text="#"        prefWidth="36"  sortable="false"/>
+                    <TableColumn fx:id="colNombre"   text="Jugador"  prefWidth="138" sortable="false"/>
+                    <TableColumn fx:id="colPuntos"   text="Puntos"   prefWidth="72"  sortable="false"/>
+                    <TableColumn fx:id="colAciertos" text="Aciertos" prefWidth="74"  sortable="false"/>
+                    <TableColumn fx:id="colFallos"   text="Fallos"   prefWidth="66"  sortable="false"/>
+                    <TableColumn fx:id="colFecha"    text="Fecha"    prefWidth="112" sortable="false"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+    </VBox>
+</StackPane>

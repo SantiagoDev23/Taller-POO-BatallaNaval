@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="FinJuegoController"
+            stylesheets="@estilos.css"
+            style="-fx-background-color: #0a1628;">
+
+    <center>
+        <ScrollPane fitToWidth="true"
+                    style="-fx-background-color: transparent; -fx-background: transparent;
+                           -fx-border-color: transparent;">
+            <VBox alignment="CENTER" spacing="20"
+                  style="-fx-padding: 28 60 28 60;">
+
+                <Label fx:id="labelResultado" text="¡VICTORIA!" styleClass="titulo-victoria"/>
+                <Label fx:id="labelSubtitulo" text=""
+                       style="-fx-font-size: 16px; -fx-text-fill: #7ecfef;"/>
+
+                <HBox alignment="CENTER" spacing="24">
+                    <VBox alignment="CENTER" styleClass="panel-menu" spacing="6" prefWidth="145">
+                        <Label text="PUNTOS" styleClass="label-seccion"/>
+                        <Label fx:id="labelPuntos" text="0.0" styleClass="label-score"
+                               style="-fx-font-size: 26px;"/>
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="panel-menu" spacing="6" prefWidth="145">
+                        <Label text="🎯  ACIERTOS" styleClass="label-seccion"/>
+                        <Label fx:id="labelAciertos" text="0" styleClass="label-score"
+                               style="-fx-font-size: 26px; -fx-text-fill: #2ed573;"/>
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="panel-menu" spacing="6" prefWidth="145">
+                        <Label text="💧  FALLOS" styleClass="label-seccion"/>
+                        <Label fx:id="labelFallos" text="0" styleClass="label-score"
+                               style="-fx-font-size: 26px; -fx-text-fill: #e63946;"/>
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="panel-menu" spacing="6" prefWidth="145">
+                        <Label text="DISPAROS" styleClass="label-seccion"/>
+                        <Label fx:id="labelDisparos" text="0" styleClass="label-score"
+                               style="-fx-font-size: 26px; -fx-text-fill: #ffd166;"/>
+                    </VBox>
+                </HBox>
+
+                <HBox fx:id="contenedorTableros" alignment="CENTER" spacing="30"/>
+
+                <VBox styleClass="panel-menu" spacing="10" maxWidth="720">
+                    <Label text="🏆  TABLA DE TOPS" styleClass="label-seccion"/>
+                    <TableView fx:id="tablaScores"
+                               styleClass="tabla-tops"
+                               prefHeight="190" maxWidth="700" editable="false">
+                        <placeholder>
+                            <Label text="Sin partidas registradas"
+                                   style="-fx-text-fill: #4a7a8e; -fx-font-size: 12px;"/>
+                        </placeholder>
+                        <columns>
+                            <TableColumn fx:id="colPos"      text="#"        prefWidth="36"/>
+                            <TableColumn fx:id="colNombre"   text="Jugador"  prefWidth="145"/>
+                            <TableColumn fx:id="colPuntos"   text="Puntos"   prefWidth="76"/>
+                            <TableColumn fx:id="colAciertos" text="Aciertos" prefWidth="78"/>
+                            <TableColumn fx:id="colFallos"   text="Fallos"   prefWidth="68"/>
+                            <TableColumn fx:id="colFecha"    text="Fecha"    prefWidth="116"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <Button text="🔄  JUGAR DE NUEVO"
+                        styleClass="btn-reiniciar"
+                        onAction="#handleJugarDeNuevo"
+                        prefWidth="220"/>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
